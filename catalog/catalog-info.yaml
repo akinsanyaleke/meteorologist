@@ -4,7 +4,10 @@ metadata:
   name: meteorologist
   annotations:
     "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=weatherforecast-csharp"
+    github.com/project-slug: akinsanyaleke/meteorologist
 spec:
   type: service
   lifecycle: experimental
   owner: default-team
+  dependsOn:
+    - resource:default/weatherforecast-csharp
