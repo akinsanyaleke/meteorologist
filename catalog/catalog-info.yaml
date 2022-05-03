@@ -12,4 +12,28 @@ spec:
   dependsOn:
     - component:weatherforecast-csharp
   providesApis:
-    - weatherforecast-api
+    - meteorologist-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: meteorologist-api
+  description: Get weather advise from your local meteorologist
+spec:
+  type: openapi
+  lifecycle: production
+  owner: default-team
+  #system: artist-engagement-portal
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Meteorologist API
+      license:
+        name: MIT
+    servers:
+      - url: https://meteorologist.tap.aks.lekeakinsanya.com
+    paths:
+      /WeatherForecast?province={province}:
+        get:
+          summary: Get weather projections by province
