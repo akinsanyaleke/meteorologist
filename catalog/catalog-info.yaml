@@ -11,3 +11,5 @@ spec:
   owner: default-team
   dependsOn:
     - component:weatherforecast-csharp
+  providesApis:
+    - weatherforecast-api
