@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
@@ -12,6 +13,7 @@ using Microsoft.Net.Http.Headers;
 namespace weatherforecast.Controllers
 {
     [ApiController]
+    [EnableCors("CorsApi")]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
