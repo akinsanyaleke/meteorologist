@@ -10,4 +10,4 @@ spec:
   lifecycle: experimental
   owner: default-team
   dependsOn:
-    - component:default/weatherforecast-csharp
+    - component:weatherforecast-csharp
