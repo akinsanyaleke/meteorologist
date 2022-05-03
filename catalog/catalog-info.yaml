@@ -1,24 +1,24 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: meteorologist
+  name: weatherforecast-partner-api
   annotations:
-    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=weatherforecast-csharp"
-    "github.com/project-slug": "akinsanyaleke/meteorologist"
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=weatherforecast-svc"
+    "github.com/project-slug": "akinsanyaleke/weather-partner-api"
 spec:
   type: service
   lifecycle: experimental
   owner: default-team
   dependsOn:
-    - component:weatherforecast-csharp
+    - component:weatherforecast-core-api
   providesApis:
-    - meteorologist-api
+    - weatherforecast-partner-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: meteorologist-api
-  description: Get weather advise from your local meteorologist
+  name: weatherforecast-partner-api
+  description: Partner API for weather information
 spec:
   type: openapi
   lifecycle: production
@@ -32,8 +32,15 @@ spec:
       license:
         name: MIT
     servers:
-      - url: https://meteorologist.tap.aks.lekeakinsanya.com
+      - url: https://weatherforecast-partner-api.tap.aks.lekeakinsanya.com
     paths:
       /WeatherForecast?province={province}:
         get:
           summary: Get weather projections by province
+          parameters:
+            - in: query
+              name: province
+              schema:
+                type: string
+              required: true
+              description: Province to get weather information of
