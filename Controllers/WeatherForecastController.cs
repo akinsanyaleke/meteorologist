@@ -13,7 +13,7 @@ using Microsoft.Net.Http.Headers;
 namespace weatherforecast.Controllers
 {
     [ApiController]
-    [EnableCors("_myAllowSpecificOrigins")]
+    //[EnableCors("_myAllowSpecificOrigins")]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
