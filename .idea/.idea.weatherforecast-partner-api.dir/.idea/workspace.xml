@@ -7,7 +7,6 @@
     <list default="true" id="31cff04b-79b3-4a88-9ce2-26594de8d637" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.weatherforecast-partner-api.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.weatherforecast-partner-api.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651616747020</updated>
-      <workItem from="1651616754100" duration="1096000" />
+      <workItem from="1651616754100" duration="854000" />
     </task>
     <servers />
   </component>

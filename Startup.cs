@@ -33,7 +33,15 @@ namespace weatherforecast
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "weatherforecast", Version = "v1" });
             });
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    policy  =>
+                    {
+                        //policy.WithOrigins("https://tap-gui.tap.aks.lekeakinsanya.com").AllowAnyMethod().AllowAnyHeader();
+                        policy.WithOrigins().AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,13 +58,7 @@ namespace weatherforecast
 
             app.UseRouting();
 
-            //app.UseCors(MyAllowSpecificOrigins);
-
-                // global cors policy
-            app.UseCors(x => x
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowAnyOrigin());
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
